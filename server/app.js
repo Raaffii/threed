@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Routes
 app.get("/", (req, res) => {
-  res.json("hello ZIPIY");
+  res.json("hello ZIPIYs");
 });
 
 app.use("/threed", routerThreed);
