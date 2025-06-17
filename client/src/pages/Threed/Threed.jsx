@@ -11,7 +11,7 @@ export default function Threed() {
     const fetchData = async () => {
       try {
         console.log("bro");
-        const response = await fetch("https://threed-server.vercel.app/threed/getthreed");
+        const response = await fetch("https://threedserver.vercel.app/threed/getthreed");
 
         if (!response.ok) {
           throw new Error("Failed to fetch data");
