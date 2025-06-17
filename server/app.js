@@ -7,7 +7,17 @@ const app = express();
 app.use(express.json());
 const port = 3000;
 
-app.use(cors());
+app.use(
+  cors(
+    cors({
+      origin: "*", // Memungkinkan semua origin untuk mengakses API
+    })
+  )
+);
+
+app.get("/", (req, res) => {
+  res.json("hello ZIPIY");
+});
 
 app.listen(port, () => {
   console.log("server berjalan di port 3000");
