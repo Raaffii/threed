@@ -4,23 +4,20 @@ const cors = require("cors");
 const routerThreed = require("./src/routes/Thereed.js");
 
 const app = express();
-app.use(express.json());
 const port = 3000;
 
-app.use(
-  cors(
-    cors({
-      origin: "*", // Memungkinkan semua origin untuk mengakses API
-    })
-  )
-);
+// Middleware
+app.use(cors({ origin: "*" }));
+app.use(express.json());
 
+// Routes
 app.get("/", (req, res) => {
   res.json("hello ZIPIY");
 });
 
+app.use("/threed", routerThreed);
+
+// Start Server
 app.listen(port, () => {
   console.log("server berjalan di port 3000");
 });
-
-app.use("/threed", routerThreed);
